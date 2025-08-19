@@ -1,7 +1,15 @@
 ## Documentation
 [Read about architecture and test results](docs/arch_and_test.pdf)
+This is brief documented depictid crucial details about architecture and test evidences.
 
 [Some genAI usage examples](docs/genAI_usage.pdf)
+
+[Azure resources exported template](docs/azure_resources.json)
+This resources template was automatically built using, but it might be useful in case you 
+are interested in detailed view. 
+```bash
+az group export --name $RESOURCE_GROUP
+```
 
 # Environment set-up
 ### 1. Azure CLI login
