@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source variables.sh
+
 az acr create \
   --resource-group "$RESOURCE_GROUP" \
   --name "$ACR_WANTED_NAME" \
@@ -32,6 +34,10 @@ az identity create \
   --resource-group $RESOURCE_GROUP \
   --name $DAPR_AD_IDENTITY \
   --location eastus2
+
+# Wait for the identity to propagate
+echo "Waiting for a minute for managed identity to propagate... "
+sleep 60
 
 # Get the client ID
 AZURE_CLIENT_ID=$(az identity show \
