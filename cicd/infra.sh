@@ -22,7 +22,7 @@ az servicebus namespace create \
   --location "East US" \
   --sku Basic
 
-# get namespace name and construct endpoint
+# get namespace name and construct ASB endpoint to be used by DAPR component
 ASB_NAMESPACE_NAME=$(az servicebus namespace list --resource-group $RESOURCE_GROUP --query '[0].name' --output tsv)
 ASB_NAMESPACE_ENDPOINT="${ASB_NAMESPACE_NAME}.servicebus.windows.net"
 
@@ -35,7 +35,7 @@ az identity create \
   --name $DAPR_AD_IDENTITY \
   --location eastus2
 
-# Wait for the identity to propagate
+# Wait for the identity to propagate - otherwise script will fail
 echo "Waiting for a minute for managed identity to propagate... "
 sleep 60
 

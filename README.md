@@ -1,5 +1,6 @@
 ## Documentation
 [Read about architecture and test results](docs/arch_and_test.pdf)
+
 [Some genAI usage examples](docs/genAI_usage.pdf)
 
 # Environment set-up
@@ -12,12 +13,13 @@ az login
 
 ### 2. Configuration
 Open cicd/variables.sh and configure names for resources in your environment - set a unique resource group at least. 
-Resource group of same name must be separately created (e.g. using Azure portal). The rest of resources will be created by the scripts.
+Resource group of same name must be separately created (e.g. using Azure portal).
+The rest of resources will be created by the scripts.
 
 ### 3. Run scripts from cicd directory to build docker images, create azure resources and start running ccontainer apps
-Here the scripts to get the app and running.
+Here are the scripts to get the environment up and running.
 
-First time execution of azure CLI might require installing extensions for Azure offerings like container apps - say yes.
+First time execution of Azure CLI might require installing extensions for Azure offerings like container apps - say yes.
 ```bash
 # set up infrastructure - it will take multiple minutes
 cd cicd
@@ -52,3 +54,10 @@ curl -X POST https://$(az containerapp show --name product-service-app --resourc
 -H "Content-Type: application/json" \
 -d '{"productId": "123", "quantity": 2, "customerId": "456"}'
 ```
+
+This will return a response like this:
+```json
+{"message":"Order created and event published"}
+```
+
+Order-service log can be viewed going to container app in Azure portal, go to "Logs stream" blade on the left.
