@@ -1,0 +1,8 @@
+componentType: pubsub.azure.servicebus.queues
+version: v1
+ignoreErrors: false
+metadata:
+- name: namespaceName
+  value: introspect1b-servicebus.servicebus.windows.net
+- name: azureClientId
+  value: 1b8bb03f-db1a-46ab-9e3d-2be80a446d07

@@ -1,0 +1,94 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" version="28.1.0">
+  <diagram name="Page-1" id="tB3gClYYmVn0MQak_x7B">
+    <mxGraphModel dx="2276" dy="1765" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7lo1enLAXzsy800MGiQI-18" value="Azure container app environment" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="-30" y="70" width="900" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="7lo1enLAXzsy800MGiQI-1" value="Product-service-app (ACA app)" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry y="130" width="380" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="7lo1enLAXzsy800MGiQI-2" value="Order-service-app&amp;nbsp;&amp;nbsp;(ACA app)" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="410" y="130" width="420" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="7lo1enLAXzsy800MGiQI-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="7lo1enLAXzsy800MGiQI-3" target="7lo1enLAXzsy800MGiQI-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7lo1enLAXzsy800MGiQI-15" value="DELIVER to subscribing consumer" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="7lo1enLAXzsy800MGiQI-14">
+          <mxGeometry x="0.4703" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7lo1enLAXzsy800MGiQI-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="7lo1enLAXzsy800MGiQI-4" target="7lo1enLAXzsy800MGiQI-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7lo1enLAXzsy800MGiQI-11" value="/order-created DAPR endpoint" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="7lo1enLAXzsy800MGiQI-10">
+          <mxGeometry x="-0.175" y="2" relative="1" as="geometry">
+            <mxPoint x="12" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7lo1enLAXzsy800MGiQI-4" value="Product-service app container" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="190" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7lo1enLAXzsy800MGiQI-5" value="DAPR sidecar container" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="190" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7lo1enLAXzsy800MGiQI-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="7lo1enLAXzsy800MGiQI-6" target="7lo1enLAXzsy800MGiQI-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7lo1enLAXzsy800MGiQI-17" value="/order-created HTTP POST endpoint" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="7lo1enLAXzsy800MGiQI-16">
+          <mxGeometry x="0.25" relative="1" as="geometry">
+            <mxPoint x="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7lo1enLAXzsy800MGiQI-6" value="DAPR sidecar container" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="190" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="7lo1enLAXzsy800MGiQI-7" value="Order-service app container" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="425" y="190" width="85" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="7lo1enLAXzsy800MGiQI-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="7lo1enLAXzsy800MGiQI-5" target="7lo1enLAXzsy800MGiQI-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7lo1enLAXzsy800MGiQI-13" value="PUBLISH" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="7lo1enLAXzsy800MGiQI-12">
+          <mxGeometry x="-0.4043" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7lo1enLAXzsy800MGiQI-21" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=1;shape=filledEdge;dashed=1;" edge="1" parent="1" source="7lo1enLAXzsy800MGiQI-19" target="7lo1enLAXzsy800MGiQI-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7lo1enLAXzsy800MGiQI-24" value="Docker image for deployment&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="7lo1enLAXzsy800MGiQI-21">
+          <mxGeometry x="-0.5571" y="-1" relative="1" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7lo1enLAXzsy800MGiQI-19" value="Azure container registry&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" style="points=[];aspect=fixed;align=right;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.acr_cloud_container_registry;verticalAlign=bottom;whiteSpace=wrap;html=1;labelPosition=left;verticalLabelPosition=top;" vertex="1" parent="1">
+          <mxGeometry x="101.4" y="-90" width="48.6" height="56.4" as="geometry" />
+        </mxCell>
+        <mxCell id="7lo1enLAXzsy800MGiQI-22" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shadow=1;shape=filledEdge;exitX=0.206;exitY=0.727;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="7lo1enLAXzsy800MGiQI-19" target="7lo1enLAXzsy800MGiQI-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="40" y="-140" as="sourcePoint" />
+            <mxPoint x="228" y="114" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7lo1enLAXzsy800MGiQI-23" value="Docker image for deployment" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="7lo1enLAXzsy800MGiQI-22">
+          <mxGeometry x="-0.4411" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7lo1enLAXzsy800MGiQI-26" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="370" y="400" width="272.8" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="7lo1enLAXzsy800MGiQI-25" value="Azure Service Bus namespace" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=bottom;" vertex="1" parent="7lo1enLAXzsy800MGiQI-26">
+          <mxGeometry width="260" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="7lo1enLAXzsy800MGiQI-3" value="order-created queue (created by DAPR)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="7lo1enLAXzsy800MGiQI-26">
+          <mxGeometry x="72.5" y="20" width="115" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
