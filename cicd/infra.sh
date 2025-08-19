@@ -13,28 +13,21 @@ az containerapp env create \
   --resource-group $RESOURCE_GROUP \
   --location eastus2
 
-# Create basic Service Bus namespace (cheapest tier)
+# Create basic Service Bus namespace (cheapest tier - does not support topics, but supports queue, which is sufficient for this example)
 az servicebus namespace create \
   --resource-group $RESOURCE_GROUP \
   --name $ASB_NAMESPACE \
   --location "East US" \
   --sku Basic
 
-az servicebus queue create \
-  --resource-group $RESOURCE_GROUP \
-  --namespace-name $ASB_NAMESPACE \
-  --name $ASB_QUEUE
-
-# Get the Service Bus namespace name and construct the full endpoint
-ASB_NAMESPACE_ENDPOINT=$(az servicebus namespace list --resource-group $RESOURCE_GROUP --query '[0].serviceBusEndpoint' --output tsv)
-
-# Alternative approach - get namespace name and construct endpoint
+# get namespace name and construct endpoint
 ASB_NAMESPACE_NAME=$(az servicebus namespace list --resource-group $RESOURCE_GROUP --query '[0].name' --output tsv)
 ASB_NAMESPACE_ENDPOINT="${ASB_NAMESPACE_NAME}.servicebus.windows.net"
 
 DAPR_ENVIRONMENT_NAME=$(az containerapp env list --resource-group $RESOURCE_GROUP --query '[0].name' --output tsv)
 
-# Create managed identity
+# Create managed identity - this will be used by Dapr to access Service Bus
+# Data owner roles allows to create queues (and publish/consume messages)
 az identity create \
   --resource-group $RESOURCE_GROUP \
   --name $DAPR_AD_IDENTITY \
@@ -54,7 +47,7 @@ PRINCIPAL_ID=$(az identity show \
   --query principalId \
   --output tsv)
 
-# Assign Service Bus Data Owner role to the managed identity
+# Assign Service Bus Data Owner role to the managed identity of the DAPR component
 az role assignment create \
   --assignee $PRINCIPAL_ID \
   --role "Azure Service Bus Data Owner" \
@@ -76,7 +69,7 @@ az containerapp env dapr-component set \
   --dapr-component-name $DAPR_COMPONENT_NAME \
   --yaml dapr-servicebus.yaml
 
-# make sure ACR can be used by ACA
+# make sure ACR can be used by ACA - assign system-assigned identity to ACA environment, allow it to pull images from ACR
 az containerapp env identity assign --name $DAPR_ENVIRONMENT_NAME --resource-group $RESOURCE_GROUP --system-assigned
 
 ACA_IDENTITY_ID=$(az containerapp env show --name $DAPR_ENVIRONMENT_NAME --resource-group $RESOURCE_GROUP --query 'identity.principalId' --output tsv)

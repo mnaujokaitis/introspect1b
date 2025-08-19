@@ -1,0 +1,7 @@
+Connecting to stream...
+2025-08-19T05:06:59.53343  Connecting to the container 'order-service-app'...
+2025-08-19T05:06:59.55186  Successfully Connected to container: 'order-service-app' [Revision: 'order-service-app--0000001', Replica: 'order-service-app--0000001-778d5bbcbd-gm9wq']
+2025-08-19T04:58:03.3807091Z stdout F Order-service App listening on port 3000 and subscribed to events!
+2025-08-19T05:02:37.0131109Z stdout F Order created event received: productId=1, quantity=10, customerId=mantas
+2025-08-19T05:02:48.0165622Z stdout F Order created event received: productId=2, quantity=20, customerId=foo-bar
+2025-08-19T05:02:56.3890070Z stdout F Order created event received: productId=3, quantity=30, customerId=bar-foo

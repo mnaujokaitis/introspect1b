@@ -1,0 +1,7 @@
+Connecting to stream...
+2025-08-19T05:07:53.42704  Connecting to the container 'product-service-app'...
+2025-08-19T05:07:53.45178  Successfully Connected to container: 'product-service-app' [Revision: 'product-service-app--0000001', Replica: 'product-service-app--0000001-76d9b5475d-m94th']
+2025-08-19T04:59:37.0533097Z stdout F Product service listening on port 3000!
+2025-08-19T05:02:37.0129859Z stdout F sent order event: {"productId":"1","quantity":10,"customerId":"mantas"}
+2025-08-19T05:02:48.0160987Z stdout F sent order event: {"productId":"2","quantity":20,"customerId":"foo-bar"}
+2025-08-19T05:02:56.3841951Z stdout F sent order event: {"productId":"3","quantity":30,"customerId":"bar-foo"}

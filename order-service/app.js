@@ -1,10 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 const app = express();
-app.use(bodyParser.json());
+app.use(bodyParser.json({ type: 'application/*+json' }));
 
 // Dapr subscription endpoint
 app.get('/dapr/subscribe', (req, res) => {
@@ -18,8 +18,9 @@ app.get('/dapr/subscribe', (req, res) => {
 });
 
 // Handle order created events
-app.post('/order-created', (req, res) => {
-    console.log('Order created event received:', req.body);
+app.post('/order-created', async (req, res) => {
+    const { productId, quantity, customerId } = req.body.data;
+    console.log(`Order created event received: productId=${productId}, quantity=${quantity}, customerId=${customerId}`);
     // Process the order event
     res.status(200).send('OK');
 });
